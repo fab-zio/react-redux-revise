@@ -1,9 +1,55 @@
 import React from 'react';
 
 class CoursePage extends React.Component {
+    // constructor(props) {
+    //     super(props)
+
+    // this.state = {
+    state = {
+        course: {
+            title: ''
+        }
+    };
+    // this.handleChange = this.handleChange.bind(this)
+
+    // }
+    handleChange = (event) => {
+        const course = { ... this.state.course, title: event.target.value };
+        this.setState({ course: course });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        alert(this.state.course.title)
+    }
+    // handleChange(event) {
+    //     console.log(event.target.value)
+    //     const course = { ... this.state.course, title: event.target.value };
+    //     this.setState({ course: course });
+    // }
+
+    // function handleChange() {
+    //     console.log('this is clicked')
+    // }
 
     render() {
-        return <h1>Thi is your course</h1>
+        return (
+
+            <form onSubmit={this.handleSubmit}>
+                <h2>Courses</h2>
+                <h3>Add Courses</h3>
+                <input
+                    type='text'
+                    // onChange={this.handleChange.bind(this)}
+                    onChange={this.handleChange}
+                    value={this.state.course.title}
+                />
+                <input
+                    type='submit'
+                    value='Save'
+                />
+            </form>
+        )
     }
 }
 
