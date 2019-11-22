@@ -1,3 +1,3 @@
-export function createAction(course) {
+export function createCourse(course) {
     return { type: "CREATE_COURSE", course: course };
 }
