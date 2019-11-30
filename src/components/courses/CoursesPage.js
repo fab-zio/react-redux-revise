@@ -9,27 +9,27 @@ class CoursesPage extends React.Component {
     //     super(props)
 
     // this.state = {
-    state = {
-        course: {
-            title: ''
-        }
-    };
+    ///////////////////////
+    // state = {
+    //     course: {
+    //         title: ''
+    //     }
+    // };
+    /////////////////////////////
     // this.handleChange = this.handleChange.bind(this)
 
     // }
-    handleChange = (event) => {
-        const course = { ... this.state.course, title: event.target.value };
-        this.setState({ course: course });
-    }
+    // //////////////////
+    // handleChange = (event) => {
+    //     const course = { ... this.state.course, title: event.target.value };
+    //     this.setState({ course: course });
+    // }
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-
-        // this.props.dispatch(courseActions.createCourse(this.state.course))
-        this.props.actions.createCourse(this.state.course);
-        // this.props.createCourse(this.state.course);
-        // alert(this.state.course.title)
-    };
+    // handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     this.props.actions.createCourse(this.state.course);  
+    // };
+    ///////////////////////////
     // handleChange(event) {
     //     console.log(event.target.value)
     //     const course = { ... this.state.course, title: event.target.value };
@@ -42,10 +42,10 @@ class CoursesPage extends React.Component {
 
     render() {
         return (
-
-            <form onSubmit={this.handleSubmit}>
+            <>
+                {/* <form onSubmit={this.handleSubmit}> */}
                 <h2>Courses</h2>
-                <h3>Add Courses</h3>
+                {/* <h3>Add Courses</h3>
                 <input
                     type='text'
                     // onChange={this.handleChange.bind(this)}
@@ -55,11 +55,12 @@ class CoursesPage extends React.Component {
                 <input
                     type='submit'
                     value='Save'
-                />
+                /> */}
                 {this.props.courses.map(course => (
                     <div key={course.title}>{course.title}</div>
                 ))}
-            </form>
+                {/* </form> */}
+            </>
         )
     }
 }
