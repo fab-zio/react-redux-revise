@@ -39,7 +39,11 @@ class CoursesPage extends React.Component {
     // function handleChange() {
     //     console.log('this is clicked')
     // }
-
+    componentDidMount() {
+        this.props.actions.loadCourses().catch(error => {
+            alert('Loading courses failed' + error);
+        });
+    }
     render() {
         return (
             <>
@@ -65,7 +69,7 @@ class CoursesPage extends React.Component {
     }
 }
 
-CoursesPage.PropTypes = {
+CoursesPage.propTypes = {
 
     // createCourse: PropTypes.func.isRequired,
     actions: PropTypes.object.isRequired,
